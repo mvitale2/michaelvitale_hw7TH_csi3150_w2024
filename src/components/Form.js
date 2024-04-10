@@ -10,9 +10,9 @@ function Form() {
     address: "",
     phone: "",
   });
-  const handleChange = (event) => {
+  function handleChange (event) {
+    const { value } = event.target;
     setForm((prevData) => {
-      const { value } = event.target;
       return {
         ...prevData,
         value,
@@ -26,6 +26,7 @@ function Form() {
   return (
     <div className="form-wrapper">
       <form>
+        <h1>Silly Form!</h1>
         {/* name */}
         <label>
           First Name:
@@ -87,7 +88,7 @@ function Form() {
         </label>
         {/* phone */}
         <label>
-          Mobile Phone Number:
+          Mobile Phone:
           <input
             name="phone"
             id="phone"
