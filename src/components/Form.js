@@ -10,15 +10,16 @@ function Form() {
     address: "",
     phone: "",
   });
-  function handleChange (event) {
-    const { value } = event.target;
-    setForm((prevData) => {
+  function handleChange(event) {
+    const { value, name } = event.target;
+    console.log({ [name]: value });
+    setForm(prevData => {
       return {
         ...prevData,
-        value,
+        [name]: value,
       };
     });
-  };
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
@@ -31,7 +32,7 @@ function Form() {
         <label>
           First Name:
           <input
-            name="first-name"
+            name="firstName"
             id="first-name"
             type="text"
             placeholder="John"
@@ -42,7 +43,7 @@ function Form() {
         <label>
           Last Name:
           <input
-            name="last-name"
+            name="lastName"
             id="last-name"
             type="text"
             placeholder="Smith"
